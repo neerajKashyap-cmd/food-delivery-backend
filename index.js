@@ -78,6 +78,10 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 // Routes
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
@@ -85,12 +89,7 @@ app.use("/api/shop", shopRouter);
 app.use("/api/item", itemRouter);
 app.use("/api/order", orderRouter);
 
-app.get("/", (req, res) => {
-  res.send({
-    activeStatus: "true",
-    error:false,
-  })
-});
+
 
 // Export for Vercel
 export default serverless(app);
