@@ -90,6 +90,7 @@ app.get("/", (req, res) => {
     activeStatus: "true",
     error:false,
   })
+});
 
 // Export for Vercel
 export default serverless(app);
