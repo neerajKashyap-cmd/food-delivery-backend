@@ -85,5 +85,11 @@ app.use("/api/shop", shopRouter);
 app.use("/api/item", itemRouter);
 app.use("/api/order", orderRouter);
 
+app.get("/", (req, res) => {
+  res.send({
+    activeStatus: "true",
+    error:false,
+  })
+
 // Export for Vercel
 export default serverless(app);
